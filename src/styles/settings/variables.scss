@@ -1,0 +1,55 @@
+:root {
+  // Generics
+
+  --base-font-size: 16px;
+  --base-font-family: "MedievalSharp", cursive;
+  --alternative-font-family: "Noto Sans Mono", monospace;
+  --emoji-font-family: "Segoe UI Emoji";
+  --gutter: 1rem;
+  --border-radius: 7px;
+
+  // Colors
+
+  --brown00: #c68f4f;
+  --brown01: #d3a673;
+  --brown02: #9f6f23;
+  --black00: #000000;
+  --black01: #272727;
+  --black02: #363000;
+  --yellow00: #ffc85f;
+  --white00: #f6f6f6;
+  --red00: #ff3813;
+  --blue00: rgb(44, 98, 235);
+
+  // Sizes
+
+  --size-xxxs: 10px;
+  --size-xxs: 18px;
+  --size-xs: 24px;
+  --size-s: 26px;
+  --size-m: 30px;
+  --size-l: 50px;
+  --size-xl: 80px;
+  --size-xxl: 130px;
+
+  // Spacing
+
+  --spacing-xxs: 5px;
+  --spacing-xs: 10px;
+  --spacing-s: 20px;
+  --spacing-m: 30px;
+  --spacing-l: 50px;
+  --spacing-xl: 80px;
+  --spacing-xxl: 130px;
+
+  --container-max-width: 1024px;
+}
+
+// Screen: media queries
+
+$screen-xxs: 424px;
+$screen-xs: 520px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1600px;

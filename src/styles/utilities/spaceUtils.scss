@@ -1,0 +1,9 @@
+@use "../tools/spaces" as spaces;
+
+@include spaces.spacing-utilities(
+  null,
+  null,
+  spaces.$directions,
+  spaces.$spaces
+);
+@include spaces.media(spaces.$devices);

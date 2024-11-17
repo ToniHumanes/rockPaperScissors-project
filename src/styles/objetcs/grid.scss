@@ -1,0 +1,55 @@
+@use "../tools/mixins" as mixin;
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 1rem auto;
+  padding: 0 10px 2rem;
+  width: 100%;
+
+  &--no-margins {
+    margin: 0 auto;
+    padding: 0 10px 0;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.row.no-gutter [class*="col"] {
+  padding: 0;
+}
+
+[class*="col"].no-gutter {
+  padding: 0;
+}
+
+[class*="col"] {
+  padding: calc(var(--gutter) / 2); // Usando calc con custom properties
+}
+
+.col {
+  flex-shrink: 1;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+@include mixin.grid-generator($breakpoint: null, $offset: true);
+
+@include mixin.xs {
+  @include mixin.grid-generator($breakpoint: "xs", $offset: true);
+}
+
+@include mixin.sm {
+  @include mixin.grid-generator($breakpoint: "sm", $offset: true);
+}
+
+@include mixin.md {
+  @include mixin.grid-generator($breakpoint: "md", $offset: true);
+}
+
+@include mixin.lg {
+  @include mixin.grid-generator($breakpoint: "lg", $offset: true);
+}

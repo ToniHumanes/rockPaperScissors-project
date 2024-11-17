@@ -1,0 +1,28 @@
+/* this structure css is based in ITCSS/BEM */
+
+/* Settings */
+
+@forward "./styles/settings/variables.scss";
+
+/* tools */
+
+@use "./styles/tools/spaces";
+
+/* generics */
+
+@use "./styles/generics/normalize";
+
+/* elements */
+
+@use "./styles/elements/elements";
+
+/* objects */
+
+@use "./styles/objetcs/grid";
+
+/* utilities */
+
+@use "./styles/utilities/displayUtils";
+@use "./styles/utilities/flexUtils";
+@use "./styles/utilities/spaceUtils";
+@use "./styles/utilities/textUtils";

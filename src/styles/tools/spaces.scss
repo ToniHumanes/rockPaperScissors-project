@@ -1,0 +1,47 @@
+@use "../settings/variables.scss" as vars;
+
+$isDevices: true;
+$directions: "top", "right", "bottom", "left";
+
+$spaces: 0px;
+$devices: vars.$screen-xs, vars.$screen-sm, vars.$screen-md;
+
+// example: margin-bottom-10px--sm
+
+@mixin spacing-utilities($isDevices, $device, $directions, $spaces) {
+  @if ($isDevices) {
+    @each $direction in $directions {
+      @each $space in $spaces {
+        @if ($device==vars.$screen-xs) {
+          .u-margin-#{$direction}-#{$space}--sm {
+            margin-#{$direction}: #{$space} !important;
+          }
+        } @else if($device==vars.$screen-sm) {
+          .u-margin-#{$direction}-#{$space}--md {
+            margin-#{$direction}: #{$space} !important;
+          }
+        } @else if($device==vars.$screen-md) {
+          .u-margin-#{$direction}-#{$space}--lg {
+            margin-#{$direction}: #{$space} !important;
+          }
+        }
+      }
+    }
+  } @else {
+    @each $direction in $directions {
+      @each $space in $spaces {
+        .u-margin-#{$direction}-#{$space} {
+          margin-#{$direction}: #{$space} !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin media($devices) {
+  @each $device in $devices {
+    @media (min-width: $device) {
+      @include spacing-utilities($isDevices, $device, $directions, $spaces);
+    }
+  }
+}
