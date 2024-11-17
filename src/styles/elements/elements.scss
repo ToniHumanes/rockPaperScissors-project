@@ -1,0 +1,47 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+// font
+html,
+body {
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block;
+  width: 100%;
+}
+
+p {
+  line-height: normal;
+  margin-top: 0;
+}
+
+form {
+  width: 100%;
+}

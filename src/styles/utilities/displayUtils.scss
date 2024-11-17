@@ -1,0 +1,18 @@
+@use "../settings/variables.scss" as vars;
+
+.u-block {
+  display: block !important;
+}
+
+.u-inline-block {
+  display: inline-block !important;
+}
+
+.u-hidden {
+  display: none !important;
+  &--sm {
+    @media (min-width: vars.$screen-sm) {
+      display: none !important;
+    }
+  }
+}

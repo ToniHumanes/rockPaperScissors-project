@@ -1,0 +1,71 @@
+@use "../settings/variables.scss" as vars;
+
+// MOBILE LG (XS)
+@mixin xs {
+  @media (min-width: vars.$screen-xs) {
+    @content;
+  }
+}
+
+// SMALL (SM)
+@mixin sm {
+  @media (min-width: vars.$screen-sm) {
+    @content;
+  }
+}
+
+// MEDIUM (MD)
+@mixin md {
+  @media (min-width: vars.$screen-md) {
+    @content;
+  }
+}
+
+// LARGE (LG)
+@mixin lg {
+  @media (min-width: vars.$screen-lg) {
+    @content;
+  }
+}
+
+@mixin grid-generator(
+  $breakpoint: null,
+  $offset: false,
+  $ordering: false,
+  $hidding: false
+) {
+  /*------------------------------------*\
+      # COLUMNS
+    \*------------------------------------*/
+  $columns-number: 12;
+
+  @for $column from 1 through $columns-number {
+    .col-#{$breakpoint}-#{$column} {
+      width: 100% * $column, $columns-number;
+    }
+  }
+
+  @if $offset {
+    @for $column from 1 through $columns-number {
+      .col-#{$breakpoint}-offset-#{$column} {
+        margin-left: 100% * $column, $columns-number;
+      }
+    }
+  }
+
+  @if $ordering {
+    .col-#{$breakpoint}-first {
+      order: -1;
+    }
+
+    .col-#{$breakpoint}-last {
+      order: 1;
+    }
+  }
+
+  @if $hidding {
+    .#{$breakpoint}-hide {
+      display: none;
+    }
+  }
+}
